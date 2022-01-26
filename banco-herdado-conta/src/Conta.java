@@ -1,8 +1,8 @@
 
 
-public class Conta {
+public abstract class Conta {
 	
-	private double saldo;
+	protected double saldo;
 	private int agencia;
 	private int numero;
 	private Cliente titular;
@@ -17,17 +17,16 @@ public class Conta {
 	//desejamos
 	public Conta(int agencia, int numero) {
 		Conta.total++;
-//		System.out.println("O total de contas criadas é " + Conta.total);
+		//System.out.println("O total de contas criadas é " + Conta.total);
 		this.agencia = 2546;
 		this.numero = 9448;
-//		System.out.println("Estou criando uma conta, pelo metodo de 'inicialização' " + this.agencia);
+		//System.out.println("Estou criando uma conta, pelo metodo de 'inicialização' " + this.agencia);
 	}
-    
-    //Com o void não precisamos retornar nada no metodo
+
+    //Com o void não precisamos retornar nada no método
     //Método depositar
-    public void deposita(double valor) {
-    	saldo += valor;
-    }
+    public abstract void deposita(double valor);
+    
     
     //Método sacar
     public boolean saca(double valor){
@@ -49,9 +48,7 @@ public class Conta {
     }
     
     
-    
-    
-    
+        
 	public double getSaldo() {
 		return saldo;
 	}
